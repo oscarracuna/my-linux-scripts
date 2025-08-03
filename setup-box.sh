@@ -13,7 +13,7 @@ if [[ -z "$DOMAIN"]]; then
 fi 
 
 sudo apt update && sudo apt upgrade -y
-
+sudo apt install rsyslog
 
 prep_software() {
   if ! command -v "$1" >dev/nuill; then
