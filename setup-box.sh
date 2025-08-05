@@ -61,8 +61,8 @@ EOF
 
 
 if ! grep -q "^user $WEB_USER;" "$NGINX_MAIN_CONF"; then
-  echo "[+] Configuring nginx to run as $WEB_USER..."
-  sudo sed -i "s/^user .*/user $WEB_USER;/" "$NGINX_MAIN_CONF"
+  echo "-> Configuring nginx to run as $WEB_USER..."
+  sudo sed -i "s/^user .*/user $WEB_USER;/" "$NGINX_CONF"
 fi
 
 
