@@ -7,20 +7,24 @@ WEB_ROOT="/var/www/$DOMAIN/html"
 NGINX_CONF="/etc/nginx/sites-available/$DOMAIN"
 
 
-if [[ -z "$DOMAIN"]]; then
+if [[ -z "$DOMAIN" ]]; then
   echo "USage: $0 example.com"
   exit 1
 fi 
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install rsyslog
+sudo adduser www
+
 
 prep_software() {
-  if ! command -v "$1" >dev/nuill; then
+  if ! command -v "$1" >dev/null; then
     echo "-> Installing $1..."
     sudo apt install "$1" -y
   else 
     echo "-> $1 is already installed"
+
+  fi
 }
 prep_software git
 prep_software ufw
