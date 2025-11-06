@@ -30,3 +30,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 grep -v 'plugins' ~/.zshrc > tmpfile && mv tmpfile ~/.zshrc
 echo 'plugins=(git zsh-syntax-highlighting)' >> ~/.zshrc
+echo 'alias nvim=/usr/bin/nvim.appimage' >> ~/.zshrc
