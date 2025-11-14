@@ -1,0 +1,12 @@
+#!/bin/bash
+
+world_directory=/home/minecraft/paper-server/world
+world_nether_directory=/home/minecraft/paper-server/world_nether
+world_the_end_directory=/home/minecraft/paper-server/world_the_end
+
+mkdir /home/minecraft/paper-backups/backup-pretard 
+cp -r $world_directory $world_nether_directory $world_the_end_directory /home/minecraft/paper-backups/backup-pretard
+
+tar -czvf /home/minecraft/paper-backups/$(date +\%d-%\m-%\Y)-backup.tar.gz /home/minecraft/paper-backups/backup-pretard
+
+rm -rf /home/minecraft/paper-backups/backup-pretard
